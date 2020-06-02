@@ -4,6 +4,9 @@ import Parallax from "../components/parallax/parallax"
 import classNames from "classnames"
 import homeStyle from "../assets/jss/homeStyle"
 import {makeStyles} from "@material-ui/core/styles"
+import GridContainer from "./gridcontainer/GridContainer"
+import GridItem from './gridcontainer/GridItem'
+
 
 
 const useStyles = makeStyles(homeStyle)
@@ -18,10 +21,20 @@ export default function Home(props){
         <Header color="transparent" fixed changeColorOnScroll={{height: 100, color:"success"}}></Header>
         <Parallax small filter image={require("../assets/img/profile-bg.jpg")}></Parallax>
         <div className= {classNames(classes.main, classes.mainRaised)}>
-            <div>
-              <div className={classes.profile}>
-                <div><img src={require("../assets/img/profile-pic.jpg")} alt="..." className={imageClasses} /></div>
-              </div>
+            <div className={classes.container}>
+            <GridContainer justify="center">
+                <GridItem xs={12} sm={12} md={6}>
+            <div className={classes.profile}>
+                  <div>
+                    <img src={require("../assets/img/profile-pic.jpg")}  alt="..." className={imageClasses} />
+                  </div>
+                  <div className={classes.name}>
+                    <h3 className={classes.title}>Venkata Mangina</h3>
+                    <h6>Software Engineer</h6>
+                  </div>
+                </div>
+              </GridItem>
+              </GridContainer>
             </div>
         </div>
         <div>Welcome Home</div>

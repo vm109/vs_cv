@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var gridStyle={grid:{marginRight:"-15px",marginleft:"-15px",width:"auto"}},_default=gridStyle;exports.default=gridStyle;
