@@ -54,6 +54,9 @@ const profilePageStyle = {
   navWrapper: {
     margin: "20px auto 50px auto",
     textAlign: "center"
+  },
+  margin5:{
+    margin: "5px"
   }
 };
 

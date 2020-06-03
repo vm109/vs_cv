@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React,{Component, useRef} from 'react'
 import Header from '../components/header'
 import Parallax from "../components/parallax/parallax"
 import classNames from "classnames"
@@ -6,12 +6,16 @@ import homeStyle from "../assets/jss/homeStyle"
 import {makeStyles} from "@material-ui/core/styles"
 import GridContainer from "./gridcontainer/GridContainer"
 import GridItem from './gridcontainer/GridItem'
+import SocialIcon from './socialIcons/SocialIcon'
+import Git from "@material-ui/icons/GitHub"
+import Linkedin from "@material-ui/icons/LinkedIn"
 
 
 
 const useStyles = makeStyles(homeStyle)
 export default function Home(props){
     const classes = useStyles()
+    const gitref = useRef(null)
     const imageClasses = classNames(
         classes.imgFluid,
         classes.imgRoundedCircle,
@@ -21,10 +25,10 @@ export default function Home(props){
         <Header color="transparent" fixed changeColorOnScroll={{height: 100, color:"success"}}></Header>
         <Parallax small filter image={require("../assets/img/profile-bg.jpg")}></Parallax>
         <div className= {classNames(classes.main, classes.mainRaised)}>
-            <div className={classes.container}>
+          <div className={classes.container}>
             <GridContainer justify="center">
                 <GridItem xs={12} sm={12} md={6}>
-            <div className={classes.profile}>
+             <div className={classes.profile}>
                   <div>
                     <img src={require("../assets/img/profile-pic.jpg")}  alt="..." className={imageClasses} />
                   </div>
@@ -32,10 +36,16 @@ export default function Home(props){
                     <h3 className={classes.title}>Venkata Mangina</h3>
                     <h6>Software Engineer</h6>
                   </div>
-                </div>
+             </div>
+             <SocialIcon onClick={()=>{const url = 'https://github.com/vm109';
+             window.open(url,"_blank_page"); }} justIcon link className={classes.margin5}><Git color="action" />
+             </SocialIcon>
+             <SocialIcon onClick={()=>{const url = 'https://www.linkedin.com/in/venkatmn';
+             window.open(url,"_blank_page"); }} justIcon link className={classes.margin5}><Linkedin color="action" />
+             </SocialIcon>
               </GridItem>
               </GridContainer>
-            </div>
+          </div>
         </div>
         <div>Welcome Home</div>
         <br/>
