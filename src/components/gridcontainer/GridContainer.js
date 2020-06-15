@@ -15,6 +15,10 @@ const classes = useStyle()
     
 }
 
+GridContainer.defaultProps = {
+    className: ""
+  };
+
 GridContainer.prototypes = {
     children : propTypes.node,
     className: propTypes.string

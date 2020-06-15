@@ -1,21 +1,45 @@
 import React from "react"
 import propTypes from "prop-types"
 import classNames from "classnames"
-import {makeStyles} from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
-import buttonStyle from "../../assets/jss/ButtonStyle"
+import socialIconStyle from "../../assets/jss/socialIconStyle"
 
-const useStyles = makeStyles(buttonStyle)
+const useStyles = makeStyles(socialIconStyle)
 
-const SocialIcon= React.forwardRef((props, ref)=>{
-const classes = useStyles()
-const {color, round,onClick, children, className, size, disabled, link, ...rest} = props
-const socialIconClasses = classNames({
-    [classes.button]: true,
-    [className]: className
-})
-    return (<><Button onClick={onClick} className={socialIconClasses}>{children}</Button>
-        </>)
+const SocialIcon = React.forwardRef((props, ref) => {
+    const classes = useStyles()
+    const {
+        color,
+        round,
+        children,
+        fullWidth,
+        disabled,
+        simple,
+        size,
+        block,
+        link,
+        justIcon,
+        className,
+        onClick,
+        ...rest
+    } = props
+    const socialIconClasses = classNames({
+        [classes.button]: true,
+        [classes[size]]: size,
+        [classes[color]]: color,
+        [classes.round]: round,
+        [classes.fullWidth]: fullWidth,
+        [classes.disabled]: disabled,
+        [classes.simple]: simple,
+        [classes.block]: block,
+        [classes.link]: link,
+        [classes.justIcon]: justIcon,
+        [className]: className
+    })
+    return ( < > < Button onClick = { onClick }
+        className = { socialIconClasses } > { children } < /Button> < / >
+    )
 })
 
 SocialIcon.propTypes = {
@@ -25,11 +49,11 @@ SocialIcon.propTypes = {
         "rose",
         "white",
         "github",
-        "transparent"  
+        "transparent"
     ]),
-    children: propTypes.node, 
+    children: propTypes.node,
     className: propTypes.string,
-    size: propTypes.oneOf(["sm","lg"]),
+    size: propTypes.oneOf(["sm", "lg"]),
     disabled: propTypes.bool,
     link: propTypes.bool,
     justIcon: propTypes.bool

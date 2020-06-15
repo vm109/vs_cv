@@ -9,6 +9,10 @@ import GridItem from './gridcontainer/GridItem'
 import SocialIcon from './socialIcons/SocialIcon'
 import Git from "@material-ui/icons/GitHub"
 import Linkedin from "@material-ui/icons/LinkedIn"
+import Divider from "@material-ui/core/Divider"
+import { Table, TableBody,TableRow, Box,List } from '@material-ui/core'
+import Experience from './Experience/experience'
+import Skills from './Skills/skills'
 
 
 
@@ -34,20 +38,40 @@ export default function Home(props){
                   </div>
                   <div className={classes.name}>
                     <h3 className={classes.title}>Venkata Mangina</h3>
-                    <h6>Software Engineer</h6>
                   </div>
+                  <SocialIcon onClick={()=>{const url = 'https://github.com/vm109';
+                  window.open(url,"_blank_page"); }} justIcon link className={classes.margin5}><Git color="action" />
+                  </SocialIcon>
+                  <SocialIcon onClick={()=>{const url = 'https://www.linkedin.com/in/venkatmn';
+                  window.open(url,"_blank_page"); }} justIcon link className={classes.margin5}><Linkedin color="action" />
+                  </SocialIcon>
              </div>
-             <SocialIcon onClick={()=>{const url = 'https://github.com/vm109';
-             window.open(url,"_blank_page"); }} justIcon link className={classes.margin5}><Git color="action" />
-             </SocialIcon>
-             <SocialIcon onClick={()=>{const url = 'https://www.linkedin.com/in/venkatmn';
-             window.open(url,"_blank_page"); }} justIcon link className={classes.margin5}><Linkedin color="action" />
-             </SocialIcon>
+              </GridItem>
+              
+              <GridItem>
+              <div className={classes.description}>
+              <h2 className={classes.header}>About Me</h2>
+              <p>Software Engineer Experienced in building Enterprise Applications </p>
+              </div>
               </GridItem>
               </GridContainer>
+            <Divider orientation={"horizontal"}></Divider>
+            <div className={classes.container}>
+            <GridContainer>
+            <GridItem xs={12} sm={12} md={9}>
+            <div><h4 textAlign={"center"}>Experience</h4></div>
+            <Experience></Experience>
+            </GridItem>
+            <GridItem xs={12} sm={12} md={3}>
+            <div><h4 textAlign={"center"}>Skills</h4></div>
+            <div textAlign={"center"}>
+            <Skills></Skills>
+            </div>
+            </GridItem>
+            </GridContainer>
+            </div>
           </div>
-        </div>
-        <div>Welcome Home</div>
+        </div>  
         <br/>
         <br/>
         <br/>

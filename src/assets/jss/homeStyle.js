@@ -2,6 +2,7 @@ import { container, title } from "../jss/material-kit-react";
 import imagesStyle from "../jss/imagesStyles"
 
 const profilePageStyle = {
+  container,
   profile: {
     textAlign: "center",
     "& img": {
@@ -13,7 +14,7 @@ const profilePageStyle = {
   },
   description: {
     margin: "1.071rem auto 0",
-    maxWidth: "600px",
+    maxWidth: "500px",
     color: "#999",
     textAlign: "center !important"
   },
@@ -57,6 +58,25 @@ const profilePageStyle = {
   },
   margin5:{
     margin: "5px"
+  },
+  header:{
+    color: "black",
+    textAlign: "center",
+    margin: "auto"
+  },
+  gridItem: {
+    textAlign: "center"
+  },
+  left:{
+    textAlign: "left"
+  },
+  companyWorkedImage:{
+    position: "absolute",
+    width:"30%",
+    textAlign: "left",
+    height: "30%",
+    display: "block",
+    margin: "2.142rem"
   }
 };
 

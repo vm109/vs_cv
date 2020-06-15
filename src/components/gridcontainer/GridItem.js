@@ -1,6 +1,6 @@
 import React from "react"
 import propTypes from "prop-types"
-import {makeStyles} from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 
 const styles = {
@@ -16,13 +16,18 @@ const styles = {
 
 const useStyles = makeStyles(styles)
 
-export default function GridItem(props){
+export default function GridItem(props) {
     const classes = useStyles()
-    const {children, className, ...rest} = props
-    return (<><Grid className={classes.grid+" "+className}>{children}</Grid></>)
+    const { children, className, ...rest } = props
+    return ( <> < Grid {...rest } item className = { classes.grid + " " + className } > { children } </Grid></> )
+
 }
 
+GridItem.defaultProps = {
+    className: ""
+  };
+  
 GridItem.propTypes = {
-    children : propTypes.node,
+    children: propTypes.node,
     className: propTypes.string
 }
